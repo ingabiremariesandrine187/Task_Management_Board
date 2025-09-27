@@ -122,8 +122,16 @@ const clearStorageBtn = document.getElementById('clear-storage');
     if (newDue !== null) task.dueDate = newDue;
     saveTasks();
  }
-
-
+function deleteTask(id){
+    if(!confirm('Are you sure you want to delete this task?'))return;
+    tasks = tasks.filter(t => t.id !== id);
+    saveTasks();
+}
+function toggleComplete(id){
+    const task =tasks.find(t.id === id);
+    task.status = task.status === 'pending' ? 'completed' : 'pending';
+    saveTasks();
+}
 
 
 
