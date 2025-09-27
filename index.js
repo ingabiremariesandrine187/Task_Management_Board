@@ -11,10 +11,22 @@ function addDaysISO(n) {
     d.setDate(d.getDate() +n);
     return d.toISOString().split('T')[0];
 }
-
+    //state
 const STORAGE_KEY = 'taskboard.tasks';
-let tasks = []
+let tasks = [];
+ //persistence
+function loadTasks() {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    tasks = raw ? JSON.parse(raw) : sampleTasks();
+}
 
+function saveTasks() {
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(tasks));
+    renderTasks();
+    updateStats();
+    renderDueList(); //new line for analytic page
+    
+}
 
 
 
