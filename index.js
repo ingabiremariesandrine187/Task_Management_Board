@@ -86,8 +86,42 @@ const clearStorageBtn = document.getElementById('clear-storage');
       taskListEl.appendChild(li);
      });
  }
- 
+ //render analytics Due List
+ function renderDueList(){
+    if (!dueListEl) return;
+    dueListEl.innerHTML = '';
+ const sortedTasks = [...tasks].sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
+ sortedTasks.forEach(task => {
+      const div = document.createElement('div');
+      div.className = `p-3 border rounded bg-white text-slate-800 flex justify-between items-center hover:shadow transition`;
+      div.innerHTML = `
+        <span>${task.name}</span>
+        <span class="text-sm text-slate-500">${fmtDate(task.dueDate)}</span>
+      `;
+      dueListEl.appendChild(div);
+    });
+ }
+ function updateStats(){
+    if(!statTotalEl) return;
+     statTotalEl.textContent = tasks.length;
+    statCompletedEl.textContent = tasks.filter(t => t.status === 'completed').length;
+    statPendingEl.textContent = tasks.filter(t => t.status === 'pending').length;
+ }
+ //CRUD functions
+ function addTask(name, dueDate){
+    if (!name) return alert('Task name cannot be empty');
+    tasks.push({ id: uid(), name, dueDate, status: 'pending', createdAt: Date.now() });
+    saveTasks();
+ }
 
+ function editTask(id){
+    const task = tasks.find(t => t.id === id);
+    const newName = prompt('Edit task name', task.name);
+    const newDue = prompt('Edit due date (YYYY-MM-DD)', task.dueDate);
+    if (newName !== null) task.name = newName.trim() || task.name;
+    if (newDue !== null) task.dueDate = newDue;
+    saveTasks();
+ }
 
 
 
