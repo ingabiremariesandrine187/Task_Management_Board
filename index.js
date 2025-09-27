@@ -12,7 +12,8 @@ function addDaysISO(n) {
     return d.toISOString().split('T')[0];
 }
 
-
+const STORAGE_KEY = 'taskboard.tasks';
+let tasks = []
 
 
 
