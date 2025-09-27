@@ -25,8 +25,22 @@ function saveTasks() {
     renderTasks();
     updateStats();
     renderDueList(); //new line for analytic page
-    
+  
 }
+
+//sample Tasks
+function sampleTasks(){
+    return [
+  {id:uid(), name:'self Study',dueDate: addDaysISO(3),status:'pending',createdAt:Date.now()},
+  {id:uid(),name:'Praying',dueDate:addDaysISO(1),status:'completed',createdAt:Date.now() -86400000},
+  {id:uid(),name:'Telling story',dueDate:addDaysISO(7),status:'pending',createdAt:Date.now() -7200000},
+  {id:uid(),name:'coding',dueDate:addDaysISO(5),status:'pending',createdAt:Date.now() - 10800000},
+  {id:uid(),name:'singing',dueDate:addDaysISO(2),status:'completed',createdAt:Date.now() - 14400000}
+
+    ];
+}
+
+
 
 
 
