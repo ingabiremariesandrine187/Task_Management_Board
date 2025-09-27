@@ -39,16 +39,31 @@ function sampleTasks(){
 
     ];
 }
+//DOM References
+const taskListEl = document.getElementById('task-list');
+const taskForm = document.getElementById('task-form');
+ const taskNameInput = document.getElementById('task-name');
+ const taskDueInput = document.getElementById('task-due');
+const clearBtn = document.getElementById('clear-btn');
+ const filterBtns = document.querySelectorAll('.filter-btn');
+const sortDateBtn = document.getElementById('sort-date');
+const clearStorageBtn = document.getElementById('clear-storage');
+  const statTotalEl = document.getElementById('stat-total') || document.getElementById('a-total');
+   const statCompletedEl = document.getElementById('stat-completed') || document.getElementById('a-completed');
+ const statPendingEl = document.getElementById('stat-pending') || document.getElementById('a-pending');
 
+ const dueListEl = document.getElementById('due-list'); //analytics list reference
 
+ //Render Functions
+ function renderTasks(filter = 'all'){
+    if(!taskListEl) return;
 
-
-
-
-
-
-
-
+    taskListEl.innerHTML='';
+    let filteredTasks = tasks;
+    if (filter === 'completed') filteredTasks = tasks.filter(t =>t.status === 'completed');
+     if (filter === 'pending') filteredTasks = tasks.filter(t => t.status === 'pending');
+ }
+ 
 
 
 
