@@ -12,7 +12,47 @@
 <h1 class="text-xl font-semibold text-slate-800">Analytics</h1>
 </header>
 <main class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+<section class="md:col-span-2 bg-white p-6 rounded-2xl shadow border border-gray-200">
+<h2 class="font-semibold mb-4 text-emerald-500">Summary</h2>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+<div class="p-4 border rounded-lg text-center bg-white border-gray-200 hover:shadow transition">
+<div class="text-sm text-slate-500">
+Total
+</div>
+<div id="a-total"class="text-2xl font-bold text-slate-800">
+—
+</div>
+ <div class="p-4 border rounded-lg text-center bg-white border-gray-200 hover:shadow transition">
+        <div class="text-sm text-slate-500">Completed</div>
+        <div id="a-completed" class="text-2xl font-bold text-emerald-500">—</div>
+      </div>
+       <div class="p-4 border rounded-lg text-center bg-white border-gray-200 hover:shadow transition">
+        <div class="text-sm text-slate-500">Pending</div>
+        <div id="a-pending" class="text-2xl font-bold text-amber-500">—</div>
+      </div>
+    </div>
+</div>
+<h3 class="font-medium mb-2 text-emerald-500">Tasks by Due Date</h3>
+<div id="due-list" class="space-y-2">
+<!-- Task items will be dynamically rendered here -->
+</div>
+</section>
 
+<aside class="bg-white p-6 rounded-2xl shadow border border-gray-200">
+<h3 class="font-semibold mb-3 text-emerald-500">Productivity tips</h3>
+ <ul class="list-disc list-inside text-slate-700 space-y-2 text-sm">
+    <li>Prioritize tasks by importance and due date.</li>
+    <li>Break larger tasks into smaller steps.</li>
+    <li>Set reminders for critical deadlines.</li>
+    <li>Review your completed tasks to track progress.</li>
+  </ul>
+</aside>
+<footer class="bg-white border-t border-slate-100 mt-8">
+<div class="max-w-6xl mx-auto p-4 text-center text-sm text-slate-500">
+Made with <span class="text-emerald-600 font-semibold">TaskBoard</span>
+</div>
+</footer>
 </main>
+<script src="index.js"></script>
 </body>
 </html>
