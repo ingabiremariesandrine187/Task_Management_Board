@@ -145,10 +145,32 @@ if (sortDateBtn) {
     });
 }
 
+if(clearStorageBtn) {
+    clearStorageBtn.addEventListener('click' , () => {
+        if(confirm('Reset all tasks')){
+            tasks = sampleTasks();
+            saveTasks();
+        }
+    })
 
+}
 
-
-
+//Form submission
+if (taskForm){
+    taskForm.addEventListener('submit' , e => {
+        e.preventDefault();
+        addTask(taskNameInput.value,taskDueInput.value);
+        taskNameInput.value='';
+        taskDueInput.value='';
+    });
+}
+if(clearBtn){
+    clearBtn.addEventListener('click',() => {
+        taskNameInput.value='';
+        taskDueInput.value='';
+    });
+}
+//initialise
 
 }
 )
