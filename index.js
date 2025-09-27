@@ -132,8 +132,18 @@ function toggleComplete(id){
     task.status = task.status === 'pending' ? 'completed' : 'pending';
     saveTasks();
 }
-
-
+//filter and sort
+filterBtns.forEach(btn => {
+    btn.addEventListener('click' ,() => {
+        renderTasks(btn.dataset.filter);
+    });
+});
+if (sortDateBtn) {
+    sortDateBtn.addEventListener('click', () => {
+    tasks.sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
+   saveTasks();
+    });
+}
 
 
 
