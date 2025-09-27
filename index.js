@@ -171,6 +171,9 @@ if(clearBtn){
     });
 }
 //initialise
-
+loadTasks();
+renderTasks();
+updateStats();
+renderDueList(); //render analytics list on load
 }
 )
