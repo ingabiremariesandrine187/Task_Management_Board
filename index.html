@@ -20,7 +20,43 @@
   </div>
     </header>
     <main class="flex-grow max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-
+  <section class="md:col-span-2 bg-white p-6 rounded-2xl shadow-lg border border-slate-100">
+ <h2 class="text-lg font-semibold mb-4 text-emerald-700">Overview</h2>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="p-4 border rounded-lg text-center hover:shadow transition">
+        <div class="text-sm text-slate-500">Total Tasks</div>
+        <div id="stat-total" class="text-2xl font-bold text-slate-800">—</div>
+      </div>
+<div class="p-4 border rounded-lg text-center hover:shadow transition">
+        <div class="text-sm text-slate-500">Completed</div>
+        <div id="stat-completed" class="text-2xl font-bold text-emerald-600">—</div>
+      </div>
+<div class="p-4 border rounded-lg text-center hover:shadow transition">
+        <div class="text-sm text-slate-500">Pending</div>
+        <div id="stat-pending" class="text-2xl font-bold text-amber-500">—</div>
+      </div>
+</div>
+<div class="mt-6">
+ <a href="tasks.html" class="inline-block px-5 py-2  bg-emerald-600 text-white font-medium rounded-lg shadow hover:bd-emerald-700 transition">Manage Tasks</a>
+</div>
+  </section>
+<aside class="bg-white p-6 rounded-2xl shadow-lg border border-slte-100">
+<h3 class="font-semibold mb-3 text-emerald-700">Quick Add Task</h3>
+<form id="quick-add" class="flex flex-col gap-3">
+    <input id="quick-name" placeholder="Task name" class="border rounded p-2 focus:ring-2 focus:ring-emerald-300 outline-none"/>
+     <input id="quick-date" type="date" class="border rounded p-2 focus:ring-2 focus:ring-emerald-300 outline-none" /> 
+ <div class="flex gap-2">
+        <button type="submit" class="flex-1 bg-emerald-600 text-white p-2 rounded-lg shadow hover:bg-emerald-700 transition">Add</button>
+        <a href="tasks.html" class="flex-1 text-center p-2 border rounded-lg text-slate-700 hover:bg-slate-50 transition">Open Full</a>
+      </div>
+</form>
+</aside>
     </main>
+    <footer class="bg-white border-t border-slate-100 mt-8">
+  <div class="max-w-6xl mx-auto p-4 text-center text-sm text-slate-500">
+ Made with <span class="text-emerald-600 font-semibold">Taskboard</span>
+  </div>
+    </footer>
+    <script src="index.js"></script>
 </body>
 </html>
