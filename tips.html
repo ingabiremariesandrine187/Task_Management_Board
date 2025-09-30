@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tasks</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Correct Font Awesome Free CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-pap3ppfR6XX8iOaLw1vTIv7d3EXq3Ox1p+q6bTVwVuV3Ht8xl4i3uvs/gD0uL6+H0lG6fMUMqkMkm7cwI+dn0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-gradient-to-br from-gray-50 to-gray-200 text-slate-800 min-h-screen flex flex-col">
 
@@ -25,26 +23,50 @@
     <h2 class="text-xl font-bold text-emerald-700 mb-4">Boost Your Productivity</h2>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
 
+      <!-- Stay Organized -->
       <div class="p-6 bg-white rounded-xl shadow flex flex-col items-center text-center hover:shadow-md transition">
-        <div class="text-emerald-600 text-4xl mb-2"><i class="fas fa-tasks"></i></div>
+        <div class="text-emerald-600 text-4xl mb-2">
+          <!-- Tasks SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512" class="w-10 h-10">
+            <path d="M96 64h320v32H96zM96 128h320v32H96zM96 192h320v32H96zM96 256h320v32H96zM96 320h320v32H96z"/>
+          </svg>
+        </div>
         <h3 class="font-semibold text-slate-700 mb-1">Stay Organized</h3>
         <p class="text-sm text-slate-600">Plan your day with clear priorities.</p>
       </div>
 
+      <!-- Manage Time -->
       <div class="p-6 bg-white rounded-xl shadow flex flex-col items-center text-center hover:shadow-md transition">
-        <div class="text-emerald-600 text-4xl mb-2"><i class="fas fa-clock"></i></div>
+        <div class="text-emerald-600 text-4xl mb-2">
+          <!-- Clock SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512" class="w-10 h-10">
+            <path d="M256 8C119.043 8 8 119.043 8 256s111.043 248 248 248 248-111.043 248-248S392.957 8 256 8zm0 448c-110.532 0-200-89.468-200-200S145.468 56 256 56s200 89.468 200 200-89.468 200-200 200zm16-200h96v32h-112V104h32v152z"/>
+          </svg>
+        </div>
         <h3 class="font-semibold text-slate-700 mb-1">Manage Time</h3>
         <p class="text-sm text-slate-600">Use realistic deadlines to reduce stress.</p>
       </div>
 
+      <!-- Stay Focused -->
       <div class="p-6 bg-white rounded-xl shadow flex flex-col items-center text-center hover:shadow-md transition">
-        <div class="text-emerald-600 text-4xl mb-2"><i class="fas fa-bullseye"></i></div>
+        <div class="text-emerald-600 text-4xl mb-2">
+          <!-- Lightbulb SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512" class="w-10 h-10">
+            <path d="M256 0c-79.529 0-144 64.471-144 144 0 52.945 30.365 99.097 74.196 121.801l-6.853 50.68a16 16 0 0015.854 17.96h106.606a16 16 0 0015.854-17.96l-6.853-50.68C369.635 243.097 400 196.945 400 144c0-79.529-64.471-144-144-144zm16 464h-32v32h32v-32zm-48 0h32v32h-32v-32z"/>
+          </svg>
+        </div>
         <h3 class="font-semibold text-slate-700 mb-1">Stay Focused</h3>
         <p class="text-sm text-slate-600">Limit distractions for deep work.</p>
       </div>
 
+      <!-- Take Breaks -->
       <div class="p-6 bg-white rounded-xl shadow flex flex-col items-center text-center hover:shadow-md transition">
-        <div class="text-emerald-600 text-4xl mb-2"><i class="fas fa-mug-saucer"></i></div>
+        <div class="text-emerald-600 text-4xl mb-2">
+          <!-- Coffee SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512" class="w-10 h-10">
+            <path d="M192 384h128v32H192zm160-160h32v64h-32zM96 128h288v224a80 80 0 01-80 80H176a80 80 0 01-80-80V128zm352-16h16a32 32 0 010 64h-16z"/>
+          </svg>
+        </div>
         <h3 class="font-semibold text-slate-700 mb-1">Take Breaks</h3>
         <p class="text-sm text-slate-600">Refresh your mind for better focus.</p>
       </div>
@@ -55,32 +77,52 @@
     <h2 class="text-xl font-bold text-emerald-700 mb-4">Tips for Using the App</h2>
     <div class="space-y-4">
 
+      <!-- Quick Add Tasks -->
       <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition flex items-start gap-3">
-        <div class="text-gray-600 text-2xl mt-1"><i class="fas fa-plus-circle"></i></div>
+        <div class="text-gray-600 text-2xl mt-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512" class="w-6 h-6">
+            <path d="M432 256c0 13.255-10.745 24-24 24h-136v136c0 13.255-10.745 24-24 24h-32c-13.255 0-24-10.745-24-24V280H40c-13.255 0-24-10.745-24-24v-32c0-13.255 10.745-24 24-24h136V40c0-13.255 10.745-24 24-24h32c13.255 0 24 10.745 24 24v136h136c13.255 0 24 10.745 24 24v32z"/>
+          </svg>
+        </div>
         <div>
           <h3 class="font-semibold text-slate-700 mb-1">Quick Add Tasks</h3>
           <p class="text-sm text-slate-600">Use the quick add form to capture tasks instantly.</p>
         </div>
       </div>
 
+      <!-- Track Progress -->
       <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition flex items-start gap-3">
-        <div class="text-emerald-600 text-2xl mt-1"><i class="fas fa-chart-line"></i></div>
+        <div class="text-emerald-600 text-2xl mt-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 576 512" class="w-6 h-6">
+            <path d="M288 32C128 32 0 160 0 320s128 288 288 288 288-128 288-288S448 32 288 32zm0 512c-123.712 0-224-100.288-224-224S164.288 96 288 96s224 100.288 224 224-100.288 224-224 224zm32-272v128h-64V272h64zm0-112v64h-64v-64h64z"/>
+          </svg>
+        </div>
         <div>
           <h3 class="font-semibold text-slate-700 mb-1">Track Progress</h3>
           <p class="text-sm text-slate-600">Check analytics to see your productivity trends.</p>
         </div>
       </div>
 
+      <!-- Reorder Easily -->
       <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition flex items-start gap-3">
-        <div class="text-emerald-600 text-2xl mt-1"><i class="fas fa-arrows-up-down-left-right"></i></div>
+        <div class="text-emerald-600 text-2xl mt-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512" class="w-6 h-6">
+            <path d="M64 352h320v32H64zm0-96h320v32H64zm0-96h320v32H64zm0-96h320v32H64z"/>
+          </svg>
+        </div>
         <div>
           <h3 class="font-semibold text-slate-700 mb-1">Reorder Easily</h3>
           <p class="text-sm text-slate-600">Drag and drop tasks to adjust priorities quickly.</p>
         </div>
       </div>
 
+      <!-- Edit Anytime -->
       <div class="p-4 bg-white rounded-xl shadow hover:shadow-md transition flex items-start gap-3">
-        <div class="text-emerald-600 text-2xl mt-1"><i class="fas fa-edit"></i></div>
+        <div class="text-emerald-600 text-2xl mt-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512" class="w-6 h-6">
+            <path d="M290.74 93.24l128 128L142.1 497.38 14.1 369.38 290.74 93.24zM497.94 74.1c18.75-18.75 18.75-49.14 0-67.88L476.79 10.17c-18.75-18.75-49.14-18.75-67.88 0l-46.06 46.06 128 128 46.09-46.09z"/>
+          </svg>
+        </div>
         <div>
           <h3 class="font-semibold text-slate-700 mb-1">Edit Anytime</h3>
           <p class="text-sm text-slate-600">Double-click tasks to rename or update them fast.</p>
@@ -91,7 +133,7 @@
 
   </main>
 
-  
+  <!-- Footer -->
   <footer class="bg-white border-t border-slate-100 mt-8">
     <div class="max-w-6xl mx-auto p-4 text-center text-sm text-slate-500">
       Made with <span class="text-emerald-600 font-semibold">TaskBoard</span>
