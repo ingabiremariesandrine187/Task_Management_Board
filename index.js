@@ -75,18 +75,23 @@
         ${task.status === 'completed' ? 'line-through text-slate-400 bg-slate-100' : ''}`;
       
       li.innerHTML = ` 
-        <div class="flex flex-col">
-          <span class="task-name cursor-pointer">${task.name}</span>
-          <span class="text-xs text-slate-500">Due: ${fmtDate(task.dueDate)}</span>
-        </div>
-        <div class="flex gap-2 items-center">
-          <button class="toggle-btn px-2 py-1 rounded text-white ${task.status==='completed'?'bg-amber-500':'bg-emerald-600'}">
-            ${task.status==='completed'?'Undo':'Done'}
-          </button>
-          <button class="edit-btn px-2 py-1 rounded border">Edit</button>
-          <button class="delete-btn px-2 py-1 rounded border text-red-500">Delete</button>
-        </div>
-      `;
+  <div class="flex flex-col">
+    <span class="task-name cursor-pointer">${task.name}</span>
+    <span class="text-xs text-slate-500">Due: ${fmtDate(task.dueDate)}</span>
+  </div>
+  <div class="flex gap-2 items-center">
+    <button class="toggle-btn px-2 py-1 rounded text-white ${task.status==='completed'?'bg-amber-500':'bg-emerald-600'}">
+      ${task.status==='completed'?'Undo':'Done'}
+    </button>
+    <button class="edit-btn px-2 py-1 rounded border">Edit</button>
+    <button class="delete-btn px-2 py-1 rounded border text-red-500 flex items-center justify-center">
+      <!-- Inline SVG Trash Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5-4h4m-4 0a1 1 0 00-1 1v1h6V4a1 1 0 00-1-1m-4 0h4" />
+      </svg>
+    </button>
+  </div>
+`;
 
       li.querySelector('.toggle-btn').addEventListener('click', () => toggleComplete(task.id));
       li.querySelector('.delete-btn').addEventListener('click', () => deleteTask(task.id));
@@ -196,3 +201,10 @@
   renderDueList(); // <-- render Analytics list on load
 
 })();
+
+ const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
