@@ -1,6 +1,6 @@
-// Wrap everything to avoid global scope pollution
+
 (function() {
-  // ---------------- Utilities ----------------
+  //  Utilities 
   function uid() {
     return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
   }
@@ -16,11 +16,11 @@
     return d.toISOString().split('T')[0];
   }
 
-  // ---------------- State ----------------
+  // State 
   const STORAGE_KEY = 'taskboard.tasks';
   let tasks = [];
 
-  // ---------------- Persistence ----------------
+  //  Persistence 
   function loadTasks() {
     const raw = localStorage.getItem(STORAGE_KEY);
     tasks = raw ? JSON.parse(raw) : sampleTasks();
@@ -30,10 +30,10 @@
     localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
     renderTasks();
     updateStats();
-    renderDueList(); // <-- new line for Analytics page
+    renderDueList(); //  new line for Analytics page
   }
 
-  // ---------------- Sample Tasks ----------------
+  // Sample Tasks
   function sampleTasks() {
     return [
       { id: uid(), name: 'Self Study', dueDate: addDaysISO(3), status: 'pending', createdAt: Date.now() },
@@ -44,7 +44,7 @@
     ];
   }
 
-  // ---------------- DOM References ----------------
+  // DOM References 
   const taskListEl = document.getElementById('task-list');
   const taskForm = document.getElementById('task-form');
   const taskNameInput = document.getElementById('task-name');
@@ -57,9 +57,9 @@
   const statCompletedEl = document.getElementById('stat-completed') || document.getElementById('a-completed');
   const statPendingEl = document.getElementById('stat-pending') || document.getElementById('a-pending');
 
-  const dueListEl = document.getElementById('due-list'); // <-- Analytics list reference
+  const dueListEl = document.getElementById('due-list'); //  Analytics list reference
 
-  // ---------------- Render Functions ----------------
+  // Render Functions 
   function renderTasks(filter = 'all') {
     if (!taskListEl) return;
 
@@ -100,7 +100,7 @@
     });
   }
 
-  // ---------------- Render Analytics Due List ----------------
+  //  Render Analytics Due List 
   function renderDueList() {
     if (!dueListEl) return;
 
@@ -126,7 +126,7 @@
     statPendingEl.textContent = tasks.filter(t => t.status === 'pending').length;
   }
 
-  // ---------------- CRUD Functions ----------------
+  // CRUD Functions 
   function addTask(name, dueDate) {
     if (!name) return alert('Task name cannot be empty');
     tasks.push({ id: uid(), name, dueDate, status: 'pending', createdAt: Date.now() });
@@ -154,7 +154,7 @@
     saveTasks();
   }
 
-  // ---------------- Filters & Sort ----------------
+  //  Filters & Sort 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       renderTasks(btn.dataset.filter);
@@ -177,7 +177,7 @@
     });
   }
 
-  // ---------------- Form Submission ----------------
+  // Form Submission 
   if(taskForm) {
     taskForm.addEventListener('submit', e => {
       e.preventDefault();
@@ -194,11 +194,11 @@
     });
   }
 
-  // ---------------- Initialize ----------------
+  // Initialize 
   loadTasks();
   renderTasks();
   updateStats();
-  renderDueList(); // <-- render Analytics list on load
+  renderDueList(); // render Analytics list on load
 
 })();
 
